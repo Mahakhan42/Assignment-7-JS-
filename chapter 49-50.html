@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 7</title>
+</head>
+<body>
+    <h2><u>Assignment 7 JS <br>Chapter 49, 50 <br>(Reading and Setting field values)</u></h2><br>
+   <!-- Q1 -->
+   <h2><u>Question No 1</u></h2>
+   <p>(Output Show In Alert)</p>
+    <!-- register Form -->
+    <!-- Q2 -->
+    <h2><u>Question No 2</u></h2>
+  <input type="checkbox" value="web Developer" id="check1">Web Developer
+  <input type="checkbox" value="web Developer"  id="check2">App Developer
+  <input type="checkbox" value="web Developer" id="check3">Graphics Designer
+  <input type="checkbox" value="web Developer" id="check4">Digital Marketing
+  <button onclick="mycheck()">Submit</button>
+    <!-- Q3 -->
+    <h2><u>Question No 3</u></h2>
+    &nbsp;<select id="myselect">
+        <option>Web Developer</option>
+        <option>App Developer</option>
+        <option>Graphics Designer</option>
+        <option>UiUx Designer</option>
+        <option>Desktop Application Dev</option>
+    </select>
+    <button onclick="myClick()">Submit</button><br><br>
+    <!-- Q4 -->
+    <h2><u>Question No 4</u></h2>
+    <input type="text" id="mytextfield" placeholder="Text Field...">
+    <button onclick="myField()">Submit</button>
+    <br><br>
+    <!-- Q5 -->
+    <h2><u>Question No 5</u></h2>
+    <input type="text" id="status" value="">
+    <button onclick="checkMaritalStatus()">Check Status</button>
+  <br><br>
+    <!-- Q6 -->
+    <h2><u>Question No 6</u></h2>
+    <input type="text" id="myInputfield" placeholder="Text Field...">
+    <button onclick="InputField()">Submit</button>
+    <hr>
+    <!-- Q7 -->
+    <h2><u>Question No 7</u></h2>
+<div class="container">
+    <center style="border: 5px double black;background-color: rgba(127, 255, 212, 0.367);"><br><br>
+    <h2><b><u>RIGISTERATION YOUR ACCOUNT</u></b></h2><br>
+    <label for="text"><b>Name :</b></label>
+    <input type="text" id="name" placeholder="Enter Your Name..."><br><br>
+    <label for="UserName"><b>UserName :</b></label>
+    <input type="text" id="username" placeholder="Enter Your User Name..."><br><br>
+    <label for="Email Address"><b>Email Address :</b></label>
+    <input type="text" id="email" placeholder="Enter Your Email Address..."><br><br>
+    <label for="text "><b>Password :</b></label>
+    <input type="text" id="pass" placeholder="Enter Your Password..."><br><br>
+    <label for="text"><b>Confirm Password :</b></label>
+    <input type="text" placeholder="Enter Your Password Again..."><br><br>
+    <button class="btn btn-success" onclick="login()">Register Now</button><br><br><br>
+</center></div><br><br><br><br>
+<script>
+// ============================= Chapter 49, 50 (Reading and Setting field values)==========================================
+// Q1
+var userInput = prompt("Enter Something..");
+console.log("You Entered " + userInput);
+
+// Q2
+function mycheck(){
+    var checkbox1 = document.getElementById("check1");
+    var checkbox2 = document.getElementById("check2");
+    var checkbox3 = document.getElementById("check3");
+    var checkbox4 = document.getElementById("check4");
+if(checkbox1.checked){
+    alert("Web Developer");
+}
+else if(checkbox2.checked){
+    alert("App Developer");
+}
+else if(checkbox3.checked){
+    alert("Graphics Designer");
+}
+else if(checkbox4.checked){
+    alert("Digital Marketing");
+}
+else{
+    alert("Sorry No Match.....");
+}
+}
+// Q3
+function myClick(){
+    var myselect = document.getElementById("myselect");
+    console.log(myselect.value);
+}
+
+// Q4
+function myField(){
+    var mytextfield = document.getElementById("mytextfield");
+    console.log("Your Text Is ",mytextfield.value);
+
+}
+// Q5
+function checkMaritalStatus() {
+    var married = false;
+    var statusField = document.getElementById('status');
+    if(!married) {
+        statusField.value = 'available';
+        console.log('Status: ' + statusField.value);
+    }
+}
+// Q6
+function InputField(){
+    var inputField = document.getElementById("myInputfield");
+    if(inputField.value === ''){
+        console.log("This field was empty!", inputField.value);
+    }
+}
+
+
+// Q7
+function login(){
+    var name = document.getElementById("name");
+    var username = document.getElementById("username");
+    var email = document.getElementById("email");
+    var password = document.getElementById("pass");
+
+    if(name.value && username.value && email.value && password.value){
+        console.log("Your Name",name.value);
+        console.log("Your UserName",username.value);
+        console.log("Your Email",email.value);
+        console.log("Your Password",password.value);
+    }
+else{
+    alert("Please Fill The Entire Field...");
+}
+} 
+// ----------------------------END--------------------
+
+</script>
+</body>
+</html>

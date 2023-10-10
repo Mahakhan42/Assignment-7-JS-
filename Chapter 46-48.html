@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 7 (JS)</title>
+</head>
+<body>
+    <h1><u>Assignment 7 JS <br>Chapter 46, 48 <br>(Events)</u></h1><br>
+    <!-- Q1 -->
+    <h4><u>Question 1</u></h4>
+    <button onclick="(alert('Hello User😊...'))">user clicks</button>
+    <!-- Q2 -->
+    <h4><u>Question 2</u></h4>
+<input onfocus="this.style.backgroundColor = 'yellow'" onblur="this.style.backgroundColor = 'white'" type="text" placeholder="Enter Your Name..">
+<button onclick="check(this)">Submit</button>
+    <!-- Q3 -->
+    <h4><u>Question 3</u></h4>
+    <a onmouseover="this.style.color = 'green'" onmouseout="this.style.color = 'purple'" href="">Hover Over Me</a>
+    <!-- Q4 -->
+   <h4><u>Question 4</u></h4> 
+   <a id="topLink" href="#">Go to top</a>
+<br>
+    <!-- Q5 -->
+    <h3><u>Question 5</u></h3>
+    <a id="soundLink" href="#">Play Sound</a>
+    <br>
+    <!-- Q6 -->
+    <h3><u>Question 6</u></h3>
+    <a id="myLink" href="#">Open new window</a><br>
+    <!-- Q7 -->
+    <h3><u>Question 7</u></h3>
+    <button onclick="alert('Assalam o Alaikum!')">Clicked</button><br>
+    <!-- Q8 -->
+    <h3><u>Question 8</u></h3>
+    <button onclick="change(this)">Colors Changes</button>
+    <br>
+        <!-- Q9 -->
+    <h3><u>Question 9</u></h3>
+    <button id="soundplay">Play Sound</button>
+    <br>
+    <!-- Q10 -->
+    <h3><u>Question 10</u></h3>
+    <img src='https://th.bing.com/th/id/OIP.pQQ9ovjRzuwzGuTbmXhdTQHaHQ?pid=ImgDet&w=500&h=490&rs=1'
+    onmousemove="onclick(alert('Hello User😊....'))" alt="">
+    <br>
+     <!-- Q11    -->
+     <h3><u>Question 11</u></h3>
+ <img onmouseout="src='https://th.bing.com/th/id/OIP.HxV79tFMPfBAIo0BBF-sOgHaEy?pid=ImgDet&rs=1'"
+           onmouseover="src='https://th.bing.com/th/id/OIP.gRoFwE3C5t3CP6pzPlf_eQHaE8?pid=ImgDet&rs=1'"
+           src="https://th.bing.com/th/id/OIP.HxV79tFMPfBAIo0BBF-sOgHaEy?pid=ImgDet&rs=1">
+       <br> 
+
+<!-- *****JAVASCRIPT****** -->
+<script>
+// Q2
+function check(e){
+console.log(e);
+e.style.backgroundColor = "green";
+e.style.color = "white";
+}
+
+// Q4
+var topLink = document.getElementById('topLink');
+
+topLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({top: 0, behavior: 'smooth'});
+});
+
+// Q5
+var soundLink = document.getElementById('soundLink');
+var audio = new Audio('audio.mp3');
+
+soundLink.addEventListener('click', function(e){
+    e.preventDefault();
+    audio.play();
+});
+
+// Q6
+var link = document.getElementById('myLink');
+
+link.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.open('https://www.example.com', '_blank');
+});
+
+// Q8
+function change(a){
+console.log(a);
+a.style.backgroundColor = 'green';
+a.style.color = 'white';
+}
+
+// Q9
+var soundplay = document.getElementById("soundplay");
+var audio = new Audio('Audio file.mp3');
+soundplay.addEventListener('click',function(){
+audio.play();
+});
+</script>
+<!-- ==========================END============= -->
+</body>
+</html>
